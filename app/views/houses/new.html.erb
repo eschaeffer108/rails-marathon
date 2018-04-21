@@ -1,0 +1,26 @@
+<h1> New House Form</h1>
+<%= render './layouts/flash' %>
+<%= form_for(@house) do |f| %>
+
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+</div>
+
+<div>
+  <%= f.label :source %>
+  <%= f.text_field :source %>
+</div>
+
+<div>
+  <%= f.label :motto %>
+  <%= f.text_field :motto %>
+</div>
+
+<%= f.submit 'Add House' %>
+<% end %>

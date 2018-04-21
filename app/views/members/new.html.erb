@@ -1,0 +1,23 @@
+<h1>New House <%=@house.name %> Member Form </h1>
+
+<% if @member.errors.any? %>
+ <div id="error_explanation">
+   <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+   <ul>
+     <% @member.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li>
+     <% end %>
+   </ul>
+ </div>
+<% end %>
+
+<%= form_for [@house, @member] do |f| %>
+  <%= f.label :first_name, 'First Name' %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name, 'Last Name' %>
+  <%= f.text_field :last_name %>
+
+  <%= f.submit 'Add Member' %>
+<% end %>
